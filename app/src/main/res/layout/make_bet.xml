@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:theme="@style/CircularProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="30dp">
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/sportPicker"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </android.support.v7.widget.AppCompatSpinner>
+
+            <TextView
+                android:id="@+id/finalScoreText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:visibility="gone"
+                android:textColor="@android:color/holo_red_dark"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/awayTeamEntry"
+                    android:layout_marginLeft="@dimen/teamEntrySideMargin"
+                    android:layout_marginRight="@dimen/teamEntrySideMargin"
+                    android:hint="@string/awayTeam" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/versus"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/teamEntrySideMargin"
+                    android:layout_marginRight="@dimen/teamEntrySideMargin"
+                    android:id="@+id/homeTeamEntry"
+                    android:hint="@string/homeTeam" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:layout_width="@dimen/spreadTotalWidth"
+                    android:layout_height="wrap_content"
+                    android:inputType="number|numberDecimal"
+                    android:ems="10"
+                    android:id="@+id/betValue"
+                    android:hint="@string/betValue"
+
+
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4">
+
+                        <RadioButton
+                            android:id="@+id/awayTeamRadio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:id="@+id/homeTeamRadio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:id="@+id/overRadio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:id="@+id/underRadio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="right"
+                    android:gravity="right">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content">
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:layout_width="@dimen/spreadTotalWidth"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberSigned|numberDecimal"
+                            android:hint="@string/spread"
+                            android:ems="10"
+                            android:id="@+id/spread"
+                            android:layout_margin="5dp"
+                            android:layout_weight="2"
+                            android:layout_gravity="right" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content">
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:layout_width="@dimen/spreadTotalWidth"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberSigned|numberDecimal"
+                            android:hint="@string/total"
+                            android:ems="10"
+                            android:id="@+id/total"
+                            android:layout_margin="5dp"
+                            android:layout_weight="2" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:layout_width="@dimen/spreadTotalWidth"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberSigned|numberDecimal"
+                    android:ems="10"
+                    android:id="@+id/odds"
+                    android:hint="@string/odds"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/swap"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/swap"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/mainTitleColor"
+                android:layout_gravity="center_horizontal"/>
+
+            <Button
+                android:id="@+id/setScore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:layout_margin="15dp"
+                android:text="@string/setScore"
+                android:textColor="@color/mainTitleColor"/>
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
